@@ -189,7 +189,7 @@ input, textarea, select{
   }
 }
 
-// butons
+// butons 
 %btn-shared{
   padding: 8px 14px;
   display: inline-block;
@@ -207,6 +207,7 @@ input, textarea, select{
 
   &:hover{
     background-color: darken($clr-regal-blue, 6%);
+    // background-color:red;
   }
 }
 
