@@ -40,13 +40,16 @@ export default categorySlice.reducer;
 
 export const fetchCategories = () => {
     return async function fetchCategoryThunk(dispatch){
-        dispatch(setStatus(STATUS.LOADING));
+        // dispatch(setStatus(STATUS.LOADING));
         try{
             const response = await fetch(`${BASE_URL}categories`);
             const data = await response.json();
+            console.log("category:");
+            console.log(data);
+            console.log("category:");
             dispatch(setCategories(data.slice(0, 5)));
-            dispatch(setStatus(STATUS.IDLE));
-        } catch(error){
+            // dispatch(setStatus(STATUS.IDLE));
+          } catch(error){
             dispatch(setStatus(STATUS.ERROR));
         }
     }
@@ -60,6 +63,9 @@ export const fetchProductsByCategory = (categoryID, dataType) => {
         try{
             const response = await fetch(`${BASE_URL}categories/${categoryID}/products`);
             const data = await response.json();
+            console.log("catProduct");
+            console.log(data);
+            console.log("catProduct");
             if(dataType === 'all'){
                 dispatch(setCategoriesProductAll(data.slice(0, 10)));
                 dispatch(setCategoriesStatusAll(STATUS.IDLE));
