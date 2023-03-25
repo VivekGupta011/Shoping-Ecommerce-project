@@ -27,6 +27,7 @@ const cartDataSlice=createSlice({
             }
         },
         removeFromCart(state,action){
+            // Hello Rohit
              
         }
     }
