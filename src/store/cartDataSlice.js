@@ -27,7 +27,7 @@ const cartDataSlice=createSlice({
             }
         },
         removeFromCart(state,action){
-            // Hello Rohit
+            // Hello Rohit you have to work on this branch
              
         }
     }
