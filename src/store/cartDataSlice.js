@@ -14,6 +14,8 @@ const cartDataSlice=createSlice({
             const existingIndex=state.cartItem.findIndex(
                 (item)=>item.id===action.payload.id
             );
+
+            
             if(existingIndex>=0){
                 state.cartItem[existingIndex]={
                     ...state.cartItem[existingIndex],
