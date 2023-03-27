@@ -132,6 +132,7 @@ const CartPage = () => {
                                             </span>
                                         </li>
                                         <li className='flex flex-between'>
+                                            
                                             <span className='fw-4'>Delivery Cost</span>
                                             <span className='fw-7'>
                                                 <span className='fw-5 text-gold'>+&nbsp;</span>{77}
