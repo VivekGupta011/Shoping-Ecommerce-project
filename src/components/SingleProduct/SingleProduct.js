@@ -15,11 +15,13 @@ const SingleProduct = () => {
   const { data: product } = useSelector(state => state.modal);
   const { cartItem } = useSelector(state => state.cartData);
 
-  // function getCartQuantity(cartItem,product){
-  //   const itemIndex=cartItem.findIndex((item)=>{ item.id===product.id});
-  //   const cartCount=cartItem[itemIndex].cartQuantity;
-  //   return cartCount;
-  // }
+  const getCartQuantity=()=>{
+    const itemIndex=cartItem.findIndex((item)=>{ item.id===product.id});
+    const cartCount=cartItem[itemIndex].cartQuantity;
+    return cartCount;
+    // console.log("CartItem:")
+    // console.log(cartItem);
+  }
 
 
   // useEffect(()=>{
@@ -86,6 +88,7 @@ const SingleProduct = () => {
                   <button type="button" className='qty-inc fs-14 text-light-blue' onClick={() => { addToCartHandler(product) }}>
                     <i className="fas fa-plus"></i>
                   </button>
+                  <button onClick={getCartQuantity}>Click me!!</button>
                 </div>
               </div>
               <button type="button" className='btn-primary add-to-cart-btn' onClick={() => { addToCartHandler(product) }}>

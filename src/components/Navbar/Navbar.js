@@ -8,7 +8,7 @@ import { getCartTotal } from '../../store/cartSlice';
 const Navbar = () => {
   const dispatch = useDispatch();
   const { data: categories } = useSelector((state) => state.category);
-  const { totalItems } = useSelector((state => state.cart));
+  const {cartTotlQuantity}=useSelector((state)=>state.cartData);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -40,7 +40,7 @@ const Navbar = () => {
                   <i className="fas fa-shopping-cart"></i>
                 </span>
                 <div className='btn-txt fw-5'>Cart
-                  <span className='cart-count-value'>{totalItems}</span>
+                  <span className='cart-count-value'>{cartTotlQuantity}</span>
                 </div>
               </Link>
             </div>
