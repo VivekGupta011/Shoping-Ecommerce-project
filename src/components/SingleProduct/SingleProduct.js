@@ -31,15 +31,15 @@ const SingleProduct = () => {
   }
 
   const addToCartHandler = (product) => {
-    // let totalPrice = qty * product.price;
-    // const tempProduct = {
-    //   ...product,
-    //   quantity: qty,
-    //   totalPrice
-    // }
-    // dispatch(addToCart(tempProduct));
-    // dispatch(setIsModalVisible(false));
-    // navigate('/cart');
+    let totalPrice = qty * product.price;
+     const tempProduct = {
+       ...product,
+       quantity: qty,
+       totalPrice
+     }
+     dispatch(addToCart(tempProduct));
+     dispatch(setIsModalVisible(false));
+     navigate('/cart');
     // alert("Hello Vivek!");
   };
 

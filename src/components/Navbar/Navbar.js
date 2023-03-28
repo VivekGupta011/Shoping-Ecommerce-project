@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCategories } from '../../store/categorySlice';
 import { getCartTotal } from '../../store/cartSlice';
+import {logout} from './../../store/userSlice';
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const {data: categories} = useSelector((state) => state.category);
   const {totalItems} = useSelector((state => state.cart));
+  const {isLoggedIn} = useSelector(state => state.user);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -33,7 +35,9 @@ const Navbar = () => {
                   <i className = "fas fa-search"></i>
                 </button>
               </form>
-
+            {!isLoggedIn ? (
+               <Link to="/login">Login</Link>
+            ) : (
               <div className = "navbar-btns">
                 <Link to = "/cart" className="add-to-cart-btn flex">
                   <span className = "btn-ico">
@@ -44,6 +48,8 @@ const Navbar = () => {
                   </div>
                 </Link>
               </div>
+             )
+            }
           </div>
         </div>
         
@@ -56,7 +62,10 @@ const Navbar = () => {
               {
                 categories.map(category => (
                   <li key = {category.id}><Link to = {`/category/${category.id}`} className = "nav-link text-white" onClick={() => setIsSidebarOpen(false)}>{category.name}</Link></li>
-                ))
+                  ))
+              }
+              {isLoggedIn &&
+              <li><Link to ='/login' className = "nav-link text-white" onClick={()=>{dispatch(logout());console.log(isLoggedIn)}}>Logout</Link></li>
               }
             </ul>
 
