@@ -4,13 +4,18 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCategories } from '../../store/categorySlice';
 import { getCartTotal } from '../../store/cartSlice';
+import { addToCartt ,getTotals} from '../../store/cartDataSlice';
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const { data: categories } = useSelector((state) => state.category);
-  const {cartTotlQuantity}=useSelector((state)=>state.cartData);
+  const { cartItem, cartTotlQuantity } = useSelector((state) => state.cartData);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cartItem]);
 
   useEffect(() => {
     dispatch(fetchCategories());
@@ -46,7 +51,7 @@ const Navbar = () => {
             </div>
 
             <div>
-              <button type="submit" className='btn-primary custom-btn' style={{fontSize:15,padding:"6px 16px"}}>
+              <button type="submit" className='btn-primary custom-btn' style={{ fontSize: 15, padding: "6px 16px" }}>
                 login
               </button>
             </div>

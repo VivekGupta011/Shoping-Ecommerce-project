@@ -7,6 +7,8 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from "./components/Footer/Footer";
 import {Provider} from 'react-redux';
 import store from "./store/store";
+import Swiper from 'swiper';
+import SwiperCarousel from './components/SwiperJs/SwiperCarousel';
 
 function App() {
 
@@ -15,6 +17,7 @@ function App() {
       <Provider store = {store}>
         <BrowserRouter>
           <Navbar />
+          <SwiperCarousel/>
           <Routes>
             <Route path = "/" element = {<Home />} />
             <Route path = "/category/:id" element = {<Category />} />
