@@ -16,7 +16,7 @@ const storeInLocalStorage = (data) => {
 const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        data: fetchFromLocalStorage(),
+        data: new Array(),//fetchFromLocalStorage()
         totalItems: 0,
         totalAmount: 0,
         deliveryCharge: 1000
@@ -37,6 +37,7 @@ const cartSlice = createSlice({
                 state.data = tempCart;
                 storeInLocalStorage(state.data);
             } else {
+              console.log(state.data)
                 state.data.push(action.payload);
                 storeInLocalStorage(state.data);
             }
