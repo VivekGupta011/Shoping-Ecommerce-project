@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import Slider from '../../components/Slider/Slider';
 import Category from '../../components/Category/Category';
 import ProductList from '../../components/ProductList/ProductList';
 import SingleCategory from '../../components/SingleCategory/SingleCategory';
@@ -26,7 +25,6 @@ const HomePage = () => {
 
   return (
     <div className = "home-page">
-      <Slider />
       <Category categories = {categories} status = {categoryStatus} />
       <ProductList products = {products} status = {productStatus} />
       <section>

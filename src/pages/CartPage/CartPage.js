@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import "./CartPage.scss";
 import { useSelector, useDispatch } from 'react-redux';
 import {Link} from "react-router-dom";
-import { removeFromCart, toggleCartQty, getCartTotal, clearCart } from '../../store/cartSlice';
 import {formatPrice} from "../../utils/helpers";
 import { addToCartt,removeFromCartt,decreaseCartt,clearCartt,getTotals } from '../../store/cartDataSlice';
 

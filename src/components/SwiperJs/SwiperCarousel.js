@@ -40,9 +40,9 @@ function SwiperCarousel() {
                 className="mySwiper"
             >
                 {
-                    data.slice(0, 5).map(Item => (
+                    data.slice(0, 3).map(Item => (
                         <SwiperSlide key={data.id}>
-                            <img style={{ width: "50%", height: "100%", objectFit: "cover" }} src={Item.images[0]} alt="Slider Image" />
+                            <img style={{ width: "100%", height: "60%", objectFit: "cover" }} src="https://fashiontool.vercel.app/static/media/storeimg.c2db3f70ed33763bb949.png" alt="Slider Image" />
                         </SwiperSlide>
                     ))
                 }

@@ -67,7 +67,7 @@ export const fetchProductsByCategory = (categoryID, dataType) => {
             console.log(data);
             console.log("catProduct");
             if(dataType === 'all'){
-                dispatch(setCategoriesProductAll(data.slice(0, 10)));
+                dispatch(setCategoriesProductAll(data.slice(0, 8)));
                 dispatch(setCategoriesStatusAll(STATUS.IDLE));
             }
             if(dataType === 'single'){

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import "./SingleProduct.scss";
 import { useSelector, useDispatch } from 'react-redux';
 import { setIsModalVisible } from '../../store/modalSlice';
-import { addToCart } from '../../store/cartSlice';
 import { useNavigate } from 'react-router-dom';
 import { formatPrice } from '../../utils/helpers';
 import { addToCartt, decreaseCartt,removeFromCartt, getTotals,clearCartt } from '../../store/cartDataSlice';

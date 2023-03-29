@@ -3,7 +3,6 @@ import "./Navbar.scss";
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCategories } from '../../store/categorySlice';
-import { getCartTotal } from '../../store/cartSlice';
 import { addToCartt ,getTotals} from '../../store/cartDataSlice';
 
 const Navbar = () => {
@@ -19,7 +18,6 @@ const Navbar = () => {
 
   useEffect(() => {
     dispatch(fetchCategories());
-    dispatch(getCartTotal());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -31,13 +29,6 @@ const Navbar = () => {
             <Link to="/" className="navbar-brand">
               <span className="text-regal-blue">Shopping</span><span className='text-gold'>Hub.</span>
             </Link>
-
-            <form className="navbar-search flex">
-              <input type="text" placeholder='Search here ...' />
-              <button type="submit" className="navbar-search-btn">
-                <i className="fas fa-search"></i>
-              </button>
-            </form>
 
             <div className="navbar-btns">
               <Link to="/cart" className="add-to-cart-btn flex">
