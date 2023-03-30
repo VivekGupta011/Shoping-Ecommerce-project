@@ -23,6 +23,9 @@ const HomePage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  console.log("Checking category state:");
+  console.log(productsByCategory);
+
   return (
     <div className = "home-page">
       <Category categories = {categories} status = {categoryStatus} />

@@ -1,4 +1,5 @@
 import './App.scss';
+import "react-toastify/dist/ReactToastify.css";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 // pages
 import {Home, Category, Cart} from "./pages/index";
@@ -9,6 +10,7 @@ import {Provider} from 'react-redux';
 import store from "./store/store";
 import Swiper from 'swiper';
 import SwiperCarousel from './components/SwiperJs/SwiperCarousel';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -16,6 +18,7 @@ function App() {
     <div className="App">
       <Provider store = {store}>
         <BrowserRouter>
+        <ToastContainer/>
           <Navbar />
           <SwiperCarousel/>
           <Routes>
