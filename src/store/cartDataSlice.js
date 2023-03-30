@@ -97,27 +97,28 @@ const cartDataSlice = createSlice({
 
         },
         getTotals(state) {
-            let { total, quantity } = state.cartItem.reduce(
-                (cartTotal, Item) => {
-                    const { price, cartQuantity } = Item;
-                    const itemTotal = price * cartQuantity;
-                    cartTotal.total += itemTotal;
-                    cartTotal.quantity += cartQuantity;
-                    return cartTotal;
-                },
-                {
-                    total: 0,
-                    quantity: 0
-                }
-            );
+            // let { total, quantity } = state.cartItem.reduce(
+            //     (cartTotal, Item) => {
+            //         const { price, cartQuantity } = Item;
+            //         const itemTotal = price * cartQuantity;
+            //         cartTotal.total += itemTotal;
+            //         cartTotal.quantity += cartQuantity;
+            //         return cartTotal;
+            //     },
+            //     {
+            //         total: 0,
+            //         quantity: 0
+            //     }
+            // );
 
-            total = parseFloat(total.toFixed(2));
-            state.cartTotalAmout = total;
-            state.cartTotlQuantity = quantity;
-            console.log("total rs;");
-            console.log(state.cartTotalAmout);
-            console.log("count:");
-            console.log(state.cartTotlQuantity)
+            // total = parseFloat(total.toFixed(2));
+            // state.cartTotalAmout = total;
+            // state.cartTotlQuantity = quantity;
+            // console.log("total rs;");
+            // console.log(state.cartTotalAmout);
+            // console.log("count:");
+            // console.log(state.cartTotlQuantity)
+            alert("hello Vivek!");
 
 
         }
